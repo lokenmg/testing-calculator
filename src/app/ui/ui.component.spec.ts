@@ -519,7 +519,7 @@ describe('Ui multiplication-component', () => {
     component.operator2 = 3;
 
     // Act
-    component.multiplication();
+    component.mult();
     result = component.result;
 
     // Assert
@@ -577,7 +577,7 @@ describe('Ui multiplication-component', () => {
     component.operator2 = 6 ;
 
     // Act
-    component.multiplication();
+    component.mult();
     fixture.detectChanges();
 
     let de = fixture.debugElement.query(By.css('.result'));
