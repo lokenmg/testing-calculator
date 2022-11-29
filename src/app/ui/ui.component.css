@@ -39,3 +39,7 @@
   color: blueviolet;
 }
 
+.sqr-button {
+  cursor: pointer;
+  color: rgb(43, 76, 226);
+}

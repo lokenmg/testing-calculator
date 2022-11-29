@@ -38,10 +38,11 @@ export class UiComponent implements OnInit {
     this.result = myresult;
   }
 
-  sqr() {
-    let myresult =0;
-    myresult = sqr(this.operator1);
-    this.result = myresult;
+   sqr() {
+     let myresult =0;
+     myresult = sqr(this.operator1);
+     this.result = myresult;
+
   }
 
 }
