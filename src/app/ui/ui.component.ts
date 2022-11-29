@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { addition } from "../addition/addition"
+import { substraction } from '../substraction/substraction';
+import { division } from '../division/division';
+import { sqr } from '../sqr/sqr';
+import { sqrt } from '../sqrt/sqrt';
+import { exp } from '../exp/exp';
+import { multiplication } from '../multiplication/multiplication';
 
 @Component({
   selector: 'app-ui',
@@ -24,7 +30,40 @@ export class UiComponent implements OnInit {
   }
 
   substraction() {
-    alert("substraction here !");
+    let myresult = 0;
+    myresult = substraction(this.operator1, this.operator2);
+    this.result = myresult;
+  }
+
+  division() {
+    let myresult =0;
+    myresult = division(this.operator1, this.operator2);
+    this.result = myresult;
+  }
+
+   sqr() {
+     let myresult =0;
+     myresult = sqr(this.operator1);
+     this.result = myresult;
+
+  }
+
+  exp() {
+    let myresult = 0;
+    myresult = exp(this.operator1, this.operator2);
+    this.result = myresult;
+  }
+
+  mult() {
+    let myresult = 0;
+    myresult = multiplication(this.operator1, this.operator2);
+    this.result = myresult;
+  }
+
+  sqrt() {
+    let myresult = 0;
+    myresult = sqrt(this.operator1);
+    this.result = myresult;
   }
 
 }
