@@ -2,7 +2,7 @@
 
     <form>
         <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span> 
+            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
             <input id="operator1" [(ngModel)]="operator1" type="number" class="form-control operator1" name="operator1" placeholder="0.0">
         </div>
 
@@ -13,11 +13,26 @@
     </form>
 
     <i class="glyphicon glyphicon-plus addition-button"
-        (click)="addition()"></i>
+        (click)="addition()"><br> </i>
 
     <i class="glyphicon glyphicon-minus substraction-button"
-        (click)="substraction()"></i>
+        (click)="substraction()"> <br> </i>
 
+
+    <i class class="glyphicon glyphicon-resize-full division-button"
+        (click)="division()"> <br> </i>
+
+    <i class class="glyphicon glyphicon-chevron-up sqr-button"
+        (click)="sqr()"> <br> </i>
+
+    <i class class="glyphicon glyphicon-arrow-up exp-button"
+        (click)="exp()"> <br> </i>
+
+    <i class class="glyphicon glyphicon-asterisk mult-button"
+        (click)="mult()"> <br> </i>
+
+        <i class class="glyphicon glyphicon-subscript sqrt-button"
+        (click)="sqrt()"> <br> </i>
 </div>
 
 <span class="result">{{ result }}</span>
