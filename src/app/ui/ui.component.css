@@ -46,5 +46,10 @@
 
 .exp-button {
   cursor: pointer;
-  color: brown;
+  color: rgb(64, 25, 25);
+}
+
+.mult-button {
+  cursor: pointer;
+  color:chartreuse;
 }
