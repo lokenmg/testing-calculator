@@ -297,3 +297,100 @@ describe('Ui division-component', () => {
   });
 
 });
+
+describe('Ui sqr-component', () => {
+  //User interfaces test
+  let component: UiComponent;
+  let fixture: ComponentFixture<UiComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [UiComponent],
+      imports: [FormsModule],
+    })
+      .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(UiComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('Should call sqr method', () => {
+    // Arrange
+    let result = 0;
+    component.operator1 = 10;
+    component.operator2 = 0;
+
+    // Act
+    component.sqr();
+    result = component.result;
+
+    // Assert
+    expect(result).toBe(100);
+  });
+
+  it('Should set operator1 model through ngModel for substraction', async () => {
+    // Arrange
+    await fixture.whenStable();
+    fixture.detectChanges();
+    const inputElement = fixture.debugElement.query(By.css('input[name="operator1"]')).nativeElement;
+
+    // Act
+    inputElement.value = '3.1416';
+    inputElement.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+
+    // Assert
+    expect(component.operator1).toEqual(3.1416);
+  });
+
+  it('Should set operator2 model through ngModel', async () => {
+    // Arrange
+    await fixture.whenStable();
+    fixture.detectChanges();
+    const inputElement = fixture.debugElement.query(By.css('input[name="operator2"]')).nativeElement;
+
+    // Act
+    inputElement.value = '2.71';
+    inputElement.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+
+    // Assert
+    expect(component.operator2).toEqual(2.71);
+  });
+
+
+  it('should add operator1 and operator2 when i click the division button ', () => {
+    // Arrange
+    component.operator1 = 5;
+    component.operator2 = 0;
+    let substractionButton = fixture.debugElement.query(By.css('.sqr-button'));
+
+    // Act
+    substractionButton.triggerEventHandler('click', null);
+
+    // Assert
+    expect(component.result).toBe(25);
+
+  });
+
+  it('Should render sqr in result div', () => {
+    // Arrange
+    component.operator1 = 0.5;
+    component.operator2 = 0;
+
+    // Act
+    component.sqr();
+    fixture.detectChanges();
+
+    let de = fixture.debugElement.query(By.css('.result'));
+    let el: HTMLElement = de.nativeElement;
+
+    // Assert
+    expect(el.innerText).toContain('0.25');
+
+  });
+
+});
